@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARIDA | Rida Toumi — Official Portfolio</title>
+  <title>ARIDA | جماعت لخير — Official Portfolio</title>
+  <meta name="description" content="Discover ARIDA, Moroccan rapper, sound engineer, producer, and songwriter. Listen to official releases, watch the SEKRAN video, and book studio collaborations." />
+  <link rel="icon" type="image/jpeg" href="./Logo-Arida.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="./Logo-Arida.jpg" />
+  <link rel="apple-touch-icon" href="./Logo-Arida.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio-arida.vercel.app/" />
+  <meta property="og:title" content="ARIDA | جماعت لخير — Official Portfolio" />
+  <meta property="og:description" content="Moroccan rap, sound engineering, production, and songwriting. Listen, watch, and book a collaboration with ARIDA." />
+  <meta property="og:image" content="https://portfolio-arida.vercel.app/Logo-Arida.jpg" />
+  <meta property="og:image:alt" content="ARIDA official logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ARIDA | جماعت لخير — Official Portfolio" />
+  <meta name="twitter:description" content="Moroccan rap, sound engineering, production, and songwriting. Listen, watch, and book a collaboration with ARIDA." />
+  <meta name="twitter:image" content="https://portfolio-arida.vercel.app/Logo-Arida.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,18 +100,36 @@
       font-size: 1.75rem;
       font-weight: 700;
       letter-spacing: 2px;
-      color: var(--text);
+      color: var(--gold-bright);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      flex-shrink: 0;
     }
-    .brand-dot {
-      width: 11px;
-      height: 11px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #070709;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.2);
+      flex-shrink: 0;
+    }
+    .brand-name { color: var(--gold-bright); }
+    .brand-divider {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(transparent, rgba(212, 175, 55, 0.7), transparent);
+    }
+    .brand-status {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--red), var(--gold), var(--green-bright));
-      box-shadow: 0 0 12px var(--gold);
+      background: var(--green-bright);
+      box-shadow: 0 0 10px rgba(22, 196, 127, 0.8), 0 0 20px rgba(0, 140, 74, 0.45);
+      flex-shrink: 0;
     }
     .nav-links { display: flex; align-items: center; gap: 26px; }
     .nav-links a {
@@ -114,7 +146,9 @@
       background: linear-gradient(135deg, var(--gold-bright), var(--gold));
       color: #09090b !important;
       font-weight: 800 !important;
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.2);
     }
+    .nav-cta:hover { box-shadow: 0 0 24px rgba(247, 217, 114, 0.42); }
     .menu-toggle {
       display: none;
       background: none;
@@ -127,8 +161,28 @@
     }
 
     /* Hero */
-    .hero { padding: 70px 0 90px; }
+    .hero {
+      position: relative;
+      isolation: isolate;
+      padding: 70px 0 90px;
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      content: "";
+      pointer-events: none;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(45deg, transparent 48%, rgba(212, 175, 55, 0.16) 49%, transparent 51%),
+        linear-gradient(-45deg, transparent 48%, rgba(212, 175, 55, 0.16) 49%, transparent 51%);
+      background-size: 68px 68px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 82%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 82%, transparent);
+    }
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 50px;
@@ -140,13 +194,16 @@
       gap: 8px;
       padding: 7px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      font-size: 0.75rem;
+      background: rgba(7, 7, 9, 0.72);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 1.4px;
+      letter-spacing: 0.9px;
       color: var(--gold-bright);
       margin-bottom: 18px;
+      max-width: 100%;
+      line-height: 1.6;
+      backdrop-filter: blur(8px);
     }
     .flag-dot { width: 8px; height: 8px; border-radius: 50%; }
     .flag-dot.red { background: var(--red); }
@@ -157,11 +214,11 @@
       font-size: clamp(3.2rem, 6.2vw, 5.4rem);
       font-weight: 900;
       line-height: 1.12;
-      background: linear-gradient(120deg, #fff4c2 0%, var(--gold) 42%, var(--red) 82%, var(--green-bright) 100%);
+      background: linear-gradient(120deg, #fff4c2 0%, var(--gold-bright) 34%, var(--red) 70%, var(--green) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
-      filter: drop-shadow(0 6px 24px rgba(212, 175, 55, 0.25));
+      filter: drop-shadow(0 6px 24px rgba(212, 175, 55, 0.3));
     }
     .artist-name {
       font-family: 'Oswald', sans-serif;
@@ -246,13 +303,55 @@
     }
 
     /* Hero Photo */
+    .hero-visual { position: relative; min-width: 0; }
     .photo-frame {
       position: relative;
+      z-index: 1;
       border-radius: 24px;
       padding: 10px;
       background: linear-gradient(145deg, var(--gold), var(--red), var(--green));
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
     }
+    .brand-emblem {
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      right: 20px;
+      width: 64px;
+      height: 64px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      border-radius: 14px;
+      background: rgba(7, 7, 9, 0.82);
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.28);
+      backdrop-filter: blur(10px);
+    }
+    .brand-emblem img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .soundwave {
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      display: flex;
+      height: 132px;
+      align-items: center;
+      gap: 4px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .soundwave-left { left: -22px; }
+    .soundwave-right { right: -22px; }
+    .soundwave span {
+      width: 3px;
+      height: 28%;
+      border-radius: 99px;
+      background: linear-gradient(to top, var(--red), var(--gold-bright), var(--green-bright));
+      opacity: 0.72;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.28);
+    }
+    .soundwave span:nth-child(2), .soundwave span:nth-child(8) { height: 48%; }
+    .soundwave span:nth-child(3), .soundwave span:nth-child(7) { height: 74%; }
+    .soundwave span:nth-child(4), .soundwave span:nth-child(6) { height: 100%; }
+    .soundwave span:nth-child(5) { height: 62%; }
     .artist-photo {
       display: block;
       width: 100%;
@@ -345,11 +444,12 @@
     /* Releases Layout */
     .releases-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
       gap: 28px;
       align-items: start;
     }
     .video-card {
+      min-width: 0;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -367,10 +467,12 @@
     }
     .video-wrapper video {
       width: 100%;
+      max-width: 100%;
       border-radius: 12px;
       background: #000;
       max-height: 360px;
     }
+    .video-wrapper { min-width: 0; }
     .video-meta {
       display: flex;
       align-items: center;
@@ -381,7 +483,12 @@
     }
     .video-meta h3 { font-size: 1.05rem; }
     .video-meta p { font-size: 0.84rem; color: var(--muted); }
-    .official-audio-list { display: flex; flex-direction: column; gap: 16px; }
+    .official-audio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
 
     /* Track Cards */
     .vault-notice {
@@ -399,15 +506,16 @@
     }
     .tracks-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
       gap: 18px;
     }
     .beats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
       gap: 22px;
     }
     .track-card {
+      min-width: 0;
       background: var(--bg-card);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius);
@@ -604,6 +712,17 @@
       color: var(--gold-bright);
       display: block;
     }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-logo {
+      display: block;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      object-fit: contain;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 10px;
+      background: #070709;
+    }
     .footer-brand p { font-size: 0.85rem; color: var(--muted); }
     .footer-socials { display: flex; gap: 14px; }
     .footer-socials a { color: var(--muted); font-size: 1.2rem; transition: var(--transition); }
@@ -614,7 +733,7 @@
       .top-card { left: 14px; }
       .bottom-card { right: 14px; }
     }
-    @media (max-width: 720px) {
+    @media (max-width: 860px) {
       .menu-toggle { display: block; }
       .nav-links {
         position: absolute;
@@ -628,8 +747,12 @@
         display: none;
       }
       .nav-links.open { display: flex; }
+    }
+    @media (max-width: 720px) {
       .form-row { grid-template-columns: 1fr; }
       .artist-photo { height: 420px; }
+      .soundwave { display: none; }
+      .brand { gap: 9px; font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -645,8 +768,10 @@
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#hero" class="brand">
-        <span class="brand-dot"></span>
-        ARIDA<span class="gold-text">.</span>
+        <img class="brand-logo" src="./Logo-Arida.jpg" alt="ARIDA official logo" />
+        <span class="brand-name">ARIDA</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-status" role="img" aria-label="Emerald status indicator"></span>
       </a>
 
       <nav class="nav-links" id="navLinks">
@@ -668,17 +793,17 @@
   <section id="hero" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="flag-dot red"></span>
-          <span class="flag-dot green"></span>
-          <span>MOROCCAN RAP • SOUND ENGINEERING • PRODUCTION</span>
-        </div>
-
         <h1 class="arabic-title" dir="rtl">جماعت لخير</h1>
 
         <h2 class="artist-name">
           ARIDA <span class="real-name">/ RIDA TOUMI</span>
         </h2>
+
+        <div class="hero-badge">
+          <span class="flag-dot red"></span>
+          <span class="flag-dot green"></span>
+          <span class="specialty-text">MOROCCAN RAPPER • SOUND ENGINEER • PRODUCER • SONGWRITER</span>
+        </div>
 
         <p class="hero-desc">
           Moroccan Rapper, Sound Engineer, Music Producer &amp; Songwriter. Blending raw street lyricism with precision studio engineering and extraordinary creative vision.
@@ -705,6 +830,12 @@
       </div>
 
       <div class="hero-visual">
+        <div class="soundwave soundwave-left" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="soundwave soundwave-right" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="photo-frame">
           <!-- PHOTO: حط arida-photo.jpeg حدا index.html -->
           <img
@@ -712,6 +843,9 @@
             alt="Rida Toumi - Arida"
             class="artist-photo"
           />
+          <div class="brand-emblem">
+            <img src="./Logo-Arida.jpg" alt="ARIDA official logo" />
+          </div>
           <div class="floating-card top-card">
             <i class="fa-solid fa-wave-square"></i>
             <div>
@@ -1325,8 +1459,11 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="arabic-mini" dir="rtl">جماعت لخير</span>
-        <p>&copy; <span id="year"></span> <strong>ARIDA (Rida Toumi)</strong>. All Rights Reserved.</p>
+        <img class="footer-logo" src="./Logo-Arida.jpg" alt="ARIDA official logo" />
+        <div class="footer-brand-copy">
+          <span class="arabic-mini" dir="rtl">جماعت لخير</span>
+          <p>&copy; <span id="year"></span> <strong>ARIDA (Rida Toumi)</strong>. All Rights Reserved.</p>
+        </div>
       </div>
       <div class="footer-socials">
         <a href="https://www.youtube.com/@Arida." target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
